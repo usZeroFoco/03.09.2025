@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário Franguinha!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 10px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .profile-pic-container {
+            width: 120px;
+            height: 120px;
+            background-color: #d81d74;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 30px auto;
+            color: white;
+            font-size: 1.1em;
+            overflow: hidden;
+        }
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .music-box {
+            background-color: #d81d74;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 auto 10px auto;
+            width: fit-content;
+            font-size: 1.1em;
+        }
+        .music-instruction {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        audio {
+            width: 80%;
+            max-width: 2000px;
+            margin-bottom: 30px;
+        }
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-arrow {
+            font-size: 2.5em;
+            color: #666;
+            cursor: pointer;
+            padding: 0 10px;
+            user-select: none;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .carousel-content {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            justify-content: center;
+        }
+        .carousel-item {
+            width: 180px;
+            height: 250px;
+            background-color: #d81d74;
+            border-radius: 10px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.1em;
+            margin: 0 10px;
+            text-align: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .carousel-item.active {
+            display: flex;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .final-message {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .hello-kitty {
+            position: absolute;
+            z-index: 10;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+        .hello-kitty-top-left {
+            top: 200px;
+            left: 500px;
+        }
+        .hello-kitty-top-right {
+            top: 320px;
+            right: 500px;
+        }
+        .hello-kitty-middle-left {
+            top: 60%;
+            left: 520px;
+            transform: translateY(-50%);
+        }
+        .hello-kitty-bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+                
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .profile-pic-container {
+                width: 100px;
+                height: 100px;
+            }
+            .music-box {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
+            .carousel-item {
+                width: 150px;
+                height: 200px;
+            }
+            .final-message {
+                font-size: 1.3em;
+            }
+
+            .hello-kitty {
+                width: 80px;
+                height: 80px;
+            }
+            .hello-kitty-top-left {
+                top: 16%;
+                left: 35px;
+            }
+            .hello-kitty-top-right {
+                top: 48%;
+                right: 20px;
+            }
+            .hello-kitty-middle-left {
+                top: 80%;
+                left: 30px;
+            }
+            .hello-kitty-bottom-right {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="imgs/helloKitty1.jpg" alt="Hello Kitty" class="hello-kitty hello-kitty-top-left">
+    <img src="imgs/helloKitty2.jpg" alt="Hello Kitty" class="hello-kitty hello-kitty-top-right">
+    <img src="imgs/helloKitty3.jpg" alt="Hello Kitty" class="hello-kitty hello-kitty-middle-left">
+
+
+    <div class="container">
+        <h1>FELIZ ANIVERSÁRIO FRANGUINHA!</h1>
+
+        <div class="profile-pic-container">
+            <img src="imgs/franguinha_perfil.jpg" alt="Foto dela">
+        </div>
+
+        <div class="music-box">
+            Sua Lindona
+        </div>
+        <p class="music-instruction">Clica no play tchutchuca</p>
+        
+        <audio controls loop>
+            <source src="nossa_musica.mp3" type="audio/mpeg">
+        
+        </audio>
+
+        <div class="carousel-wrapper">
+            <span class="carousel-arrow" onclick="changeSlide(-1)">&lt;</span>
+            <div class="carousel-content" id="carousel-content">
+                </div>
+            <span class="carousel-arrow" onclick="changeSlide(1)">&gt;</span>
+        </div>
+
+        <p class="final-message">Eu te amo minha princesa</p>
+
+
+    </div>
+
+    <script>
+        // Use uma array para gerenciar os caminhos das imagens
+        const images = [];
+        for (let i = 0; i <= 35; i++) {
+            images.push(`imgs/foto${i}.jpg`);
+        }
+
+        const carouselContent = document.getElementById('carousel-content');
+
+        // Adiciona as imagens ao carrossel de forma moderna
+        images.forEach(src => {
+            const carouselItem = document.createElement('div');
+            carouselItem.className = 'carousel-item';
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Foto';
+            carouselItem.appendChild(img);
+            carouselContent.appendChild(carouselItem);
+        });
+
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+            });
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            showSlide(slideIndex);
+        }
+
+        // Garante que o carrossel inicie com a primeira foto
+        showSlide(slideIndex);
+
+    </script>
+
+</body>
+</html>
